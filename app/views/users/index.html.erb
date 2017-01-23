@@ -13,6 +13,7 @@
       <tr>
         <th>名前</th>
         <th>Eメール</th>
+        <th>権限</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -22,6 +23,7 @@
         <tr>
           <td><%= user.name %></td>
           <td><%= user.email %></td>
+          <td><%= t(user.role) %></td>
           <td><%= link_to '詳細', user %></td>
           <td><%= link_to '編集', edit_user_path(user) %></td>
           <td><%= link_to '削除', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
