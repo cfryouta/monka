@@ -62,9 +62,10 @@ class TaggingsController < ApplicationController
   # DELETE /taggings/1
   # DELETE /taggings/1.json
   def destroy
+    @book = Book.find(params[:book_id])
     @tagging.destroy
     respond_to do |format|
-      format.html { redirect_to taggings_url, notice: 'Tagging was successfully destroyed.' }
+      format.html { redirect_to @book, notice: 'Tagging was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
