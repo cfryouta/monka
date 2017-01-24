@@ -21,6 +21,7 @@ class TaggingsController < ApplicationController
 
   # GET /taggings/1/edit
   def edit
+    @book = Book.find(params[:book_id])
   end
 
   # POST /taggings
@@ -45,9 +46,11 @@ class TaggingsController < ApplicationController
   # PATCH/PUT /taggings/1
   # PATCH/PUT /taggings/1.json
   def update
+    @book = Book.find(params[:book_id])
+    
     respond_to do |format|
       if @tagging.update(tagging_params)
-        format.html { redirect_to @tagging, notice: 'Tagging was successfully updated.' }
+        format.html { redirect_to @book, notice: 'Tagging was successfully updated.' }
         format.json { render :show, status: :ok, location: @tagging }
       else
         format.html { render :edit }

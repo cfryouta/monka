@@ -18,7 +18,7 @@
 
   <div class="form-group">
     <%= f.label :tag_id %>
-    <%= f.text_field :tag_id, class: "form-control" %>
+    <%= f.select :tag_id, Tag.all.map{|t| [t.name, t.id]}, class: "form-control" %>
   </div>
 
   <div class="actions">
