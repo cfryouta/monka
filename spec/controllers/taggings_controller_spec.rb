@@ -41,6 +41,7 @@
 #   let(:tag){ Tag.first }
 #   let(:valid_session) { {} }
 
+
 #   describe "GET #new" do
 #     it "assigns a new tagging as @tagging" do
 #       get :new, params: { book_id: book.id }, session: valid_session
