@@ -39,6 +39,7 @@ RSpec.describe TaggingsController, type: :controller do
   before(:each) { sign_in admin_user }
   let(:book){ Book.first }
   let(:tag){ Tag.first }
+  let(:valid_session) { {} }
 
 
   describe "GET #new" do
@@ -51,7 +52,7 @@ RSpec.describe TaggingsController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested tagging as @tagging" do
       tagging = Tagging.create! valid_attributes
-      get :edit, params: {id: tagging.to_param}, session: valid_session
+      get :edit, params: { book_id: book.id }, session: valid_session
       expect(assigns(:tagging)).to eq(tagging)
     end
   end

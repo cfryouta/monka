@@ -19,5 +19,6 @@
             <p><%= music.published_on %></p>
             <p><%= music.play_time %> 分</p>
             <p><%= number_to_currency(music.try(:price), precision: 0, unit: "円") %></p>
+        <% end %>
     </div>
 </div>

@@ -70,6 +70,6 @@ class MusicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def music_params
-      params.require(:music).permit(:title, :published_on, :showing, :price, :play_time)
+      params.require(:music).permit(:title, :author, :published_on, :showing, :price, :play_time)
     end
 end
