@@ -12,6 +12,12 @@ CSV.foreach('db/tags.csv', headers: :first_row) do |row|
     tag	= Tag.find_or_create_by(name: row['name'])
 end
 
+CSV.foreach('db/musics.csv', headers: :first_row) do |row|
+    music = Music.find_or_create_by(title: row['title'], author: row['author'], price: row['price'], play_time: row['play_time'], showing: row['showing'])
+    music.published_on = Date.parse(row['published_on'])
+    music.save
+end
+
 CSV.foreach('db/books.csv', headers: :first_row) do |row|
     book = Book.find_or_create_by(title: row['title'], author: row['author'], price: row['price'])
     book.published_on = Date.parse(row['published_on'])
