@@ -31,7 +31,7 @@ RSpec.describe MusicsController, type: :controller do
   # in order to pass any filters (e.g. authentication) defined in
   # MusicsController. Be sure to keep this updated too.
     let(:admin_user) { User.all.first }
-  before(:each) {sign_in admin_user }
+  before(:each) { sign_in admin_user }
   let(:valid_session) { {} }
 
   describe "GET #index" do
