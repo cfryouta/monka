@@ -20,7 +20,7 @@ class Order < ApplicationRecord
     end
     
     event :deliver do
-      transitions from :paid, to: :delivered
+      transitions from: :paid, to: :delivered
     end
   end
   
