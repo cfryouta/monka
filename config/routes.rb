@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :orders, only: [:new, :create]
   resources :musics
+  resources :orders_management, only: [:index]
   get 'products/index'
   root to: 'products#index'
 
