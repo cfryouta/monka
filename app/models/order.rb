@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  include AASM
   enum status: { order_accepted: 0, paid: 1, delivered: 2 }
   belongs_to :user
   has_one :order_detail
@@ -7,6 +8,20 @@ class Order < ApplicationRecord
   def checkout(product_id)
     build_order_detail(product_id: product_id)
     save!
+  end
+  
+  aasm column: :status do
+    state :order_accepted,initial: true
+    state :paid
+    state :delivered
+    
+    event :confirm_payment do
+      transitions from: :order_accepted, to: :paid
+    end
+    
+    event :deliver do
+      transitions from :paid, to: :delivered
+    end
   end
   
   private
