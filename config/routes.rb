@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :line_items do
+  resources :line_items, only: [:create] do
     put :remove
+    member do
+      post :add_cart_item
+    end
   end
   resources :carts
   resources :orders, only: [:new, :create]
