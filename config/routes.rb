@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :orders_management, only: [:index, :edit] do
     put :confirm_payment
     put :deliver
+    member do
+      post :async_confirm_payment
+      post :async_deliver
+    end
   end
   get 'products/index'
   root to: 'products#index'
