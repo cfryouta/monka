@@ -58,3 +58,5 @@ group :production do
 end
 
 gem 'aasm'
+
+gem 'ransack'
