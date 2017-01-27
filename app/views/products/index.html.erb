@@ -26,11 +26,17 @@
                         <%= f.label :price %>
                         <div class="row">
                             <div class="col-sm-5">
-                                <%= f.number_field :price_gteq, class: "form-control" %>
+                                <div class="input-group">
+                                    <%= f.number_field :price_gteq, class: "form-control" %>
+                                    <div class="input-group-addon">円</div>
+                                </div>
                             </div>
                             <%= f.label :while, class: "col-sm-2 text-center" %>
                             <div class="col-sm-5">
-                                <%= f.number_field :price_lteq, class: "form-control" %>
+                                <div class="input-group">
+                                    <%= f.number_field :price_lteq, class: "form-control" %>
+                                    <div class="input-group-addon">円</div>
+                                </div>
                             </div>
                         </div>
                     </div>

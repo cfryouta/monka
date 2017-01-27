@@ -7,7 +7,7 @@ ja:
         title: タイトル
         showing: 発売
         price: 価格
-        author: 著者
+        author: 著者/アーティスト
         while: ～
       book:
         author: 著者
@@ -23,7 +23,8 @@ ja:
         tag_id: タグ
       order:
         shipping_address: 配送先
-        status: 状況
+        status: 状態
+        user_id: 購入者
     enum:
       order:
         status:
